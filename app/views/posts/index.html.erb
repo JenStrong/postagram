@@ -1,22 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Welcome to Postagram</h1>
+<h1 class="display-2">Welcome to Postagram! </h1><br>
+<h4 class="display-6"><%= link_to 'New Post', new_post_path %></h4>
+<div class="container">
+  <div class="row">
 
-<table>
-  <tbody>
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.description %></td>
-        <div style="width:400px; height:auto">
-        <%= image_tag(post.image, style: "width: 100%") %>
+      <div class="col-sm">
+        <div class="card mt-2" style="width: 18rem;">
+          <div class="card-header"> **Avatar/User Here </div>
+            <img class="card-img-top" <%= image_tag(post.image, style: "width: 100%") %>
+          <div class="card-body">
+            <p class="card-text"><%= post.description %></p>
+            <div class="card-text"><%= link_to 'Edit', edit_post_path(post) %></div>
+            <div class="card-text"><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          </div>
         </div>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+  </div>
+</div>
