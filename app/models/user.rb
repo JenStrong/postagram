@@ -7,5 +7,5 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false } #rails infers that uniquness should be true
   validates :password, presence: true, length: { minimum: 6 }
 
-  has_secure_password
+  has_secure_password #this is a bit of ruby magic, it allows to authenticate a user when trying to sign in. 
 end

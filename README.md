@@ -23,17 +23,12 @@ Things you may want to cover:
 
 * ...
 
+1. Modeling Users:  Starting from scratch, in this chapter we created a working User model with name, email, and password attributes, together with validations enforcing several important constraints on their values. In addition, we have the ability to securely authenticate users using a given password. What I learned: Migrations allow us to modify our application’s data model.
+Active Record comes with a large number of methods for creating and manipulating data models.
+Active Record validations allow us to place constraints on the data in our models.
+Common validations include presence, length, and format.
+Regular expressions are cryptic but powerful.
+Defining a database index improves lookup efficiency while allowing enforcement of uniqueness at the database level.
+We can add a secure password to a model using the built-in has_secure_password method.
 
-<h1>Welcome to Postagram</h1>
-
-    <% @posts.each do |post| %>
-      <div class="card" style="width: 18rem;">
-        <div class="card-header"> **Avatar/User Here </div>
-        <img class="card-img-top" <%= image_tag(post.image, style: "width: 100%") %>
-        <div class="card-body">
-          <p class="card-text"><%= post.description %></p>
-          <div class="card-text"><%= link_to 'Edit', edit_post_path(post) %></div>
-          <div class="card-text"><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-        </div>
-      </div>
-<% end %>
+2. 
