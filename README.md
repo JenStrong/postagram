@@ -14,6 +14,7 @@ This project is a photo sharing app similar to Instagram. User's are able to pos
   Use Ruby 2.5.1
 ```
 $ git clone https://github.com/JenStrong/postagram.git
+$ cd postagram
 $ bundle install
 $ bin/rails db:setup
 $ bin/rails server
